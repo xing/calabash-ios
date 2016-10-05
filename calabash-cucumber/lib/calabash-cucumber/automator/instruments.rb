@@ -195,6 +195,11 @@ Expected '#{strategy}' to be one of these supported strategies:
         end
 
         # @!visibility private
+        def keyboard_visible?
+          uia_keyboard_visible?
+        end
+
+        # @!visibility private
         def send_app_to_background(secs)
           uia_send_app_to_background(secs)
         end

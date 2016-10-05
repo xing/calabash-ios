@@ -254,6 +254,11 @@ args[0] = #{args[0]}])
         end
 
         # @!visibility private
+        def keyboard_visible?
+          client.keyboard_visible?
+        end
+
+        # @!visibility private
         def enter_text_with_keyboard(string, options={})
           client.enter_text_without_keyboard_check(string)
         end

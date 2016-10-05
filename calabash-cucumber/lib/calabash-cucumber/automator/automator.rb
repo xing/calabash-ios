@@ -113,6 +113,11 @@ module Calabash
         end
 
         # @!visibility private
+        def keyboard_visible?
+          abstract_method!
+        end
+
+        # @!visibility private
         #
         # It is the caller's responsibility to:
         # 1. expect the keyboard is visible
