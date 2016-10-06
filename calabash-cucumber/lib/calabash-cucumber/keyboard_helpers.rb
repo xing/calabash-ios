@@ -79,7 +79,8 @@ module Calabash
         # Order matters!
         docked_keyboard_visible? ||
           undocked_keyboard_visible? ||
-          split_keyboard_visible?
+          split_keyboard_visible? ||
+          _automator_keyboard_visible?
       end
 
       # @!visibility private
@@ -213,6 +214,11 @@ module Calabash
       # @!visibility private
       def _query_for_split_keyboard
         _query_wrapper(SPLIT_KEYBOARD_QUERY).first
+      end
+
+      # @!visibility private
+      def _automator_keyboard_visible?
+        launcher.automator.keyboard_visible?
       end
     end
   end
