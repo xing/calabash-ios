@@ -205,14 +205,15 @@ module Calabash
         with_screenshot_on_failure { client.long_press(uiquery, {:duration => duration}) }
       end
 
+      # @deprecated 0.20.3 Use Core#keyboard_visible?
+      #
       # Returns true if there is a keyboard visible.
       #
       # Scheduled for removal in 0.21.0.  Use Core#keyboard_visible?. If you
       # find an example where Core#keyboard_visible? does not find visible
       # keyboard, please report it.
-      #
-      # @deprecated 0.21.0 Use Core#keyboard_visible?
       def keyboard_visible?
+        RunLoop.deprecated("0.20.3", "Use Core#keyboard_visible?")
         client.keyboard_visible?
       end
 
